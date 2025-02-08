@@ -22,7 +22,6 @@ const Hero: FC = () => {
       aria-label="Welcome to Adriaansen Consulting"
     >
      
-
       {/* Enhanced layered backgrounds */}
       <div className="absolute inset-0 z-10">
         <div className="absolute inset-0 bg-gradient-to-br from-carbon via-carbon/95 to-carbon/80" />
