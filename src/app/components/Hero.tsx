@@ -4,10 +4,10 @@ import { FC, useEffect, useState } from "react";
 import Image from "next/image";
 
 const Hero: FC = () => {
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    setIsLoaded(true);
+    setIsVisible(true);
   }, []);
 
   const scrollToServices = () => {
@@ -21,58 +21,90 @@ const Hero: FC = () => {
       className="relative min-h-[100svh] bg-carbon overflow-hidden"
       aria-label="Welcome to Adriaansen Consulting"
     >
-      {/* Background gradient effect */}
-      <div className="absolute inset-0 bg-gradient-to-br from-carbon via-carbon/90 to-carbon/70" role="presentation" />
+      {/* Enhanced layered background */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-gradient-to-br from-carbon via-carbon/95 to-carbon/80" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(212,175,55,0.05)_0%,transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(245,245,245,0.03)_0%,transparent_50%)]" />
+      </div>
       
-      {/* Static background pattern */}
-      <div className="absolute inset-0 opacity-10" role="presentation">
-        <div className="absolute inset-0 bg-[url('/pattern.svg')] bg-repeat" />
+      {/* Refined background pattern with subtle movement */}
+      <div className="absolute inset-0 opacity-[0.05]" role="presentation">
+        <div className="absolute inset-0 bg-[url('/pattern.svg')] bg-repeat animate-subtle-float scale-150" />
       </div>
 
-      <div className={`relative z-10 flex flex-col items-center justify-center min-h-[100svh] px-4 sm:px-6 text-center transition-opacity duration-1000 ${
-        isLoaded ? 'opacity-100' : 'opacity-0'
-      }`}>
-        <Image
-          src="/logo_4.png"
-          alt="Adriaansen Consulting Logo"
-          width={100}
-          height={100}
-          priority
-          className="mb-6 sm:mb-8 drop-shadow-2xl hover:scale-105 transition-transform duration-300 ease-out sm:w-[120px] sm:h-[120px] md:w-[140px] md:h-[140px]"
-        />
+      <div 
+        className={`relative z-10 flex flex-col items-center justify-center min-h-[100svh] px-4 sm:px-6 text-center 
+          ${isVisible ? 'animate-fadeIn' : 'opacity-0'}`}
+      >
+        {/* Enhanced logo presentation */}
+        <div className="relative mb-8 sm:mb-10">
+          <div className="absolute inset-0 animate-glow filter blur-md bg-gold/20 rounded-full" />
+          <Image
+            src="/logo_4.png"
+            alt="Adriaansen Consulting Logo"
+            width={140}
+            height={140}
+            priority
+            className="relative drop-shadow-2xl hover:scale-105 transition-all duration-500 ease-out
+                     filter brightness-110 hover:brightness-125"
+          />
+        </div>
         
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-extrabold text-cream leading-tight mb-4 sm:mb-6 drop-shadow-2xl">
-          <span className="block bg-gradient-to-r from-cream to-cream/90 bg-clip-text text-transparent [text-wrap:balance]">Where Tradition</span>
-          <span className="block bg-gradient-to-r from-cream to-cream/90 bg-clip-text text-transparent [text-wrap:balance]">Meets Innovation</span>
+        {/* Refined typography with enhanced visual hierarchy */}
+        <h1 className="relative text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 sm:mb-8">
+          <span className="block bg-gradient-to-r from-cream via-cream/95 to-cream/90 bg-clip-text text-transparent 
+                         [text-wrap:balance] tracking-tight leading-tight animation-delay-200 animate-slideInDown">
+            Where Tradition
+          </span>
+          <span className="block bg-gradient-to-r from-cream via-cream/95 to-cream/90 bg-clip-text text-transparent 
+                         [text-wrap:balance] tracking-tight leading-tight mt-2 animation-delay-300 animate-slideInDown">
+            Meets Innovation
+          </span>
         </h1>
 
-        <p className="text-lg sm:text-xl md:text-2xl text-cream/90 leading-relaxed mb-8 sm:mb-12 max-w-3xl mx-auto px-4 font-light [text-wrap:pretty]">
+        <p className="text-xl sm:text-2xl md:text-3xl text-cream/90 leading-relaxed mb-10 sm:mb-12 
+                    max-w-3xl mx-auto px-4 font-light [text-wrap:pretty] tracking-wide
+                    animation-delay-400 animate-fadeIn">
           Strategic Finance, Wealth Management & Digital Transformation
         </p>
 
-        <div className="px-4 w-full sm:w-auto">
+        {/* Enhanced button design */}
+        <div className="relative group px-4 w-full sm:w-auto animation-delay-500 animate-pop">
+          <div className="absolute -inset-0.5 bg-gradient-to-r from-gold/50 via-cream/30 to-gold/50 rounded-lg blur 
+                        opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200
+                        animate-glow" />
           <button
             onClick={scrollToServices}
-            className="w-full sm:w-auto bg-gold hover:bg-gold/90 text-carbon font-bold py-3 sm:py-4 px-8 sm:px-10 rounded-lg 
-                     transition-all duration-300 hover:scale-105 hover:shadow-lg
-                     focus:outline-none focus:ring-2 focus:ring-gold/50 active:scale-95"
+            className="relative w-full sm:w-auto py-4 sm:py-5 px-10 sm:px-12 rounded-lg 
+                     transition-all duration-300 hover:scale-[1.02] active:scale-95
+                     bg-gradient-to-r from-gold via-gold to-gold hover:to-cream
+                     text-carbon font-bold text-lg sm:text-xl
+                     focus:outline-none focus:ring-2 focus:ring-gold/50 
+                     shadow-lg hover:shadow-xl"
             aria-label="View our services"
           >
             Explore Our Services
           </button>
         </div>
 
-        <div className="absolute bottom-6 sm:bottom-10 left-1/2 transform -translate-x-1/2">
+        {/* Refined scroll indicator */}
+        <div className="absolute bottom-8 sm:bottom-12 left-1/2 transform -translate-x-1/2 animation-delay-600">
           <a 
             href="#overview" 
             aria-label="Scroll to overview section"
-            className="block transition-all duration-300 hover:translate-y-1 hover:text-gold focus:outline-none focus:ring-2 focus:ring-gold/50 rounded-full p-2"
+            className="group flex flex-col items-center gap-2 hover:text-gold 
+                     transition-colors duration-300 focus:outline-none focus:ring-2 
+                     focus:ring-gold/50 rounded-full p-2"
           >
+            <span className="text-sm font-medium text-cream/70 group-hover:text-gold/90 
+                           transition-colors duration-300">Discover More</span>
             <svg
-              className="w-6 h-6 sm:w-8 sm:h-8 text-cream/90 animate-pulse"
+              className="w-8 h-8 sm:w-10 sm:h-10 text-cream/60 group-hover:text-gold/90 
+                       transition-all duration-300 animate-float"
               fill="none"
               stroke="currentColor"
-              strokeWidth="2"
+              strokeWidth="1.5"
               viewBox="0 0 24 24"
             >
               <path
