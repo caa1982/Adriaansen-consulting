@@ -74,12 +74,12 @@ const Team: FC = () => {
                 style={{ transitionDelay: `${index * 200}ms` }}
               >
                 <div className="flex flex-col items-center sm:flex-row sm:items-start mb-6 space-y-4 sm:space-y-0">
-                  <div className="relative w-28 h-28 sm:w-24 sm:h-24 sm:mr-6 rounded-full overflow-hidden group-hover:scale-105 transition-transform duration-300">
+                  <div className="relative w-28 h-28 sm:w-24 sm:h-24 sm:mr-6 overflow-hidden group-hover:scale-105 transition-transform duration-300">
                     <Image
                       src={member.image}
                       alt={member.name}
                       fill
-                      className="rounded-full object-cover"
+                      className="object-cover"
                     />
                   </div>
                   <div className="text-center sm:text-left flex-1">
