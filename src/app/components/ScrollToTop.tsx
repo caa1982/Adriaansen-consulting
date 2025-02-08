@@ -32,7 +32,7 @@ const ScrollToTop: FC = () => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       className={`fixed bottom-4 sm:bottom-8 right-4 sm:right-8 
-                 bg-cream/90 backdrop-blur-sm p-3 sm:p-4 
+                 bg-gold backdrop-blur-sm p-3 sm:p-4 
                  rounded-full shadow-lg transition-all duration-500
                  hover:bg-gold hover:text-cream
                  active:scale-95 focus:outline-none focus:ring-2 focus:ring-gold/50 

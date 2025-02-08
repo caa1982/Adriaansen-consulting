@@ -15,6 +15,12 @@ const Hero: FC = () => {
     servicesSection?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const scrollToOverview = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const overviewSection = document.getElementById("overview");
+    overviewSection?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <section 
       id="hero" 
@@ -47,7 +53,7 @@ const Hero: FC = () => {
             width={140}
             height={140}
             priority
-            className="relative drop-shadow-2xl hover:scale-105 transition-all duration-500 ease-out
+            className="relative hover:scale-105 transition-all duration-500 ease-out
                      filter brightness-110 hover:brightness-125"
           />
         </div>
@@ -72,7 +78,7 @@ const Hero: FC = () => {
 
         {/* Refined button design */}
         <div className="relative group px-4 w-full sm:w-auto animation-delay-500 animate-pop">
-          <div className="absolute -inset-0.5 bg-gradient-to-r from-gold/50 via-cream/30 to-gold/50 rounded-lg blur 
+          <div className="absolute bg-gradient-to-r from-gold/50 via-cream/30 to-gold/50 rounded-lg blur 
                         opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200
                         animate-glow" />
           <button
@@ -94,10 +100,11 @@ const Hero: FC = () => {
           <div className="absolute -top-2 -left-2 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gold/20 animate-ping" />
           <a 
             href="#overview" 
+            onClick={scrollToOverview}
             aria-label="Scroll to overview section"
             className="group flex flex-col items-center gap-2 hover:text-gold 
-                     transition-colors duration-300 focus:outline-none focus:ring-2 
-                     focus:ring-gold/50 rounded-full p-2 hover:scale-110"
+                     transition-colors duration-300 focus:outline-none
+                     rounded-full p-2 hover:scale-110"
           >
             <span className="text-sm font-medium text-cream/70 group-hover:text-gold/90 
                            transition-colors duration-300">Discover More</span>
