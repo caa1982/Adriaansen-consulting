@@ -22,7 +22,7 @@ const Team: FC = () => {
     {
       name: "Jessica Adriaansen",
       role: "Private Banking & Wealth Structuring Expert",
-      image: "/logo_3.png",
+      image: "/logo_1.png",
       linkedIn: "https://www.linkedin.com/in/jessica-adriaansen-523a48120/",
       expertise: [
         "Over 30 years of expertise in private banking and wealth management",
