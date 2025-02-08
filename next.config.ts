@@ -1,11 +1,14 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+import { NextConfig } from 'next'
+
+const nextConfig: NextConfig = {
   images: {
     // Add any external image domains if needed
     domains: [],
     // Optimize image loading
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    deviceSizes: [320, 420, 768, 1024, 1200],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256],
+    formats: ['image/webp'],
   },
   // Enable React strict mode for better development
   reactStrictMode: true,
@@ -58,7 +61,11 @@ const nextConfig = {
         permanent: true,
       }
     ];
-  }
+  },
+  experimental: {
+    optimizeCss: true,
+    scrollRestoration: true,
+  },
 };
 
 export default nextConfig;

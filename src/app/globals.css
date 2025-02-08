@@ -6,12 +6,15 @@
   --gold: #D4AF37;
   --cream: #F5F5F0;
   --carbon: #1C1C1C;
+  --ease-out-cubic: cubic-bezier(0.33, 1, 0.68, 1);
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
     -webkit-tap-highlight-color: transparent;
+    text-size-adjust: none;
+    scroll-padding-top: 100px;
   }
 
   body {
@@ -19,6 +22,7 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-synthesis: none;
   }
 
   /* Better responsive font scaling */
@@ -35,12 +39,6 @@
       font-size: 16px;
     }
   }
-
-  /* Smooth scrolling for the whole page */
-  :root {
-    scroll-behavior: smooth;
-    --scroll-behavior: smooth;
-  }
 }
 
 @layer components {
@@ -51,15 +49,15 @@
   }
 
   .animate-slideInDown {
-    animation: slideInDown 1s ease-out;
+    animation: slideInDown 1s var(--ease-out-cubic);
   }
 
   .animate-fadeIn {
-    animation: fadeIn 1s ease-out;
+    animation: fadeIn 1s var(--ease-out-cubic);
   }
 
   .animate-pop {
-    animation: pop 0.3s ease-out;
+    animation: pop 0.3s var(--ease-out-cubic);
   }
 
   .animate-float {
@@ -73,114 +71,117 @@
   .container {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
+}
 
-  @keyframes slideInDown {
-    0% {
-      transform: translateY(-100%);
-      opacity: 0;
-    }
-    100% {
-      transform: translateY(0);
-      opacity: 1;
-    }
+/* Animation keyframes */
+@keyframes slideInDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
   }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes pop {
-    0% {
-      transform: scale(0.5);
-      opacity: 0;
-    }
-    100% {
-      transform: scale(1);
-      opacity: 1;
-    }
-  }
-
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-20px);
-    }
-  }
-
-  @keyframes glow {
-    0%, 100% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0.6;
-    }
-  }
-
-  @keyframes slideIn {
-    from {
-      transform: translateX(-100%);
-      opacity: 0;
-    }
-    to {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
-
-  @keyframes slide {
-    from {
-      transform: translateX(0) translateY(0);
-    }
-    to {
-      transform: translateX(-100%) translateY(-100%);
-    }
-  }
-
-  .animate-fadeIn {
-    animation: fadeIn 1s ease-out forwards;
-  }
-
-  .animate-slideIn {
-    animation: slideIn 0.8s ease-out forwards;
-  }
-
-  .animate-slide {
-    animation: slide 20s linear infinite;
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 
-@layer utilities {
-  .animation-delay-200 {
-    animation-delay: 200ms;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
   }
-  .animation-delay-400 {
-    animation-delay: 400ms;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  .animation-delay-600 {
-    animation-delay: 600ms;
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0.95);
+    opacity: 0;
   }
-  .animation-delay-800 {
-    animation-delay: 800ms;
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+/* Animation delays */
+.animation-delay-100 {
+  animation-delay: 100ms;
+}
+.animation-delay-200 {
+  animation-delay: 200ms;
+}
+.animation-delay-300 {
+  animation-delay: 300ms;
+}
+.animation-delay-400 {
+  animation-delay: 400ms;
+}
+.animation-delay-500 {
+  animation-delay: 500ms;
+}
+.animation-delay-600 {
+  animation-delay: 600ms;
+}
+.animation-delay-800 {
+  animation-delay: 800ms;
+}
+
+/* Modern CSS features */
+@supports (text-wrap: balance) {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@supports (text-wrap: pretty) {
+  .text-pretty {
+    text-wrap: pretty;
+  }
+}
+
+/* Scrollbar styling */
+@media (hover: hover) {
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
   }
 
-  .touch-action-none {
-    touch-action: none;
+  ::-webkit-scrollbar-track {
+    background: var(--cream);
   }
 
-  .safe-bottom {
-    padding-bottom: env(safe-area-inset-bottom);
+  ::-webkit-scrollbar-thumb {
+    background: var(--gold);
+    border-radius: 5px;
+    border: 2px solid var(--cream);
   }
 
-  .safe-top {
-    padding-top: env(safe-area-inset-top);
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--carbon);
   }
 }

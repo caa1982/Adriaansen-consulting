@@ -64,6 +64,9 @@ const Navbar: FC = () => {
           <div 
             onClick={scrollToHero}
             className="flex items-center space-x-3 transform hover:scale-105 transition-all duration-300 cursor-pointer group"
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => e.key === 'Enter' && scrollToHero()}
           >
             <Image 
               src="/logo_5.png" 
@@ -71,7 +74,7 @@ const Navbar: FC = () => {
               width={40} 
               height={40} 
               priority 
-              className="rounded-lg group-hover:rotate-3 transition-transform duration-300" 
+              className="rounded-lg group-hover:rotate-3 transition-transform duration-300 will-change-transform" 
             />
             <span className="text-lg sm:text-xl md:text-2xl font-serif text-carbon font-bold truncate group-hover:text-gold transition-colors duration-300">
               Adriaansen Consulting
@@ -79,13 +82,13 @@ const Navbar: FC = () => {
           </div>
           
           <button
-            className="text-carbon md:hidden hover:text-gold transition-colors z-50 p-2"
+            className="text-carbon md:hidden hover:text-gold transition-colors z-50 p-2 focus:outline-none focus:ring-2 focus:ring-gold/50 rounded-lg"
             onClick={toggleMenu}
             aria-label="Toggle menu"
             aria-expanded={isOpen}
           >
             <svg
-              className="w-6 h-6 transition-transform duration-300"
+              className="w-6 h-6 transition-transform duration-300 will-change-transform"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -105,7 +108,7 @@ const Navbar: FC = () => {
             transform transition-all duration-500 ease-out bg-cream
             ${isOpen ? 'translate-y-0 opacity-100' : '-translate-y-full md:translate-y-0 opacity-0 md:opacity-100'}
             ${isScrolled ? 'bg-cream/95 backdrop-blur-sm' : 'bg-cream'}
-            md:bg-transparent md:backdrop-blur-none z-50
+            md:bg-transparent md:backdrop-blur-none z-50 will-change-transform
           `}>
             <ul className="flex flex-col md:flex-row md:items-center h-full md:h-auto justify-center py-16 md:py-0 px-4 md:px-0 space-y-6 md:space-y-0 md:space-x-8">
               {['overview', 'team', 'services', 'engagement', 'contact'].map((item) => (
