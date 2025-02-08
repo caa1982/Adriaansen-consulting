@@ -4,12 +4,12 @@ export default function JsonLd() {
     "@type": "ProfessionalService",
     "name": "Adriaansen Consulting",
     "description": "Strategic Finance, Wealth Management & Digital Transformation consultancy specializing in AI and Blockchain solutions",
-    "@id": "https://www.adriaansen-consulting.com",
-    "url": "https://www.adriaansen-consulting.com",
-    "logo": "https://www.adriaansen-consulting.com/logo_1.png",
+    "@id": "https://www.adriaansenconsulting.com",
+    "url": "https://www.adriaansenconsulting.com",
+    "logo": "https://www.adriaansenconsulting.com/logo_1.png",
     "image": [
-      "https://www.adriaansen-consulting.com/logo_1.png",
-      "https://www.adriaansen-consulting.com/logo_2.png"
+      "https://www.adriaansenconsulting.com/logo_1.png",
+      "https://www.adriaansenconsulting.com/logo_2.png"
     ],
     "priceRange": "$$$",
     "address": {
@@ -17,8 +17,8 @@ export default function JsonLd() {
       "addressCountry": "US"
     },
     "sameAs": [
-      "https://www.linkedin.com/company/adriaansen-consulting",
-      "https://twitter.com/adriaansenconslt"
+      "https://www.linkedin.com/company/adriaansenconsulting",
+      "https://twitter.com/adriaansenconsulting"
     ],
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
@@ -75,7 +75,7 @@ export default function JsonLd() {
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://www.adriaansen-consulting.com"
+      "@id": "https://www.adriaansenconsulting.com"
     },
     "faqPage": {
       "@type": "FAQPage",

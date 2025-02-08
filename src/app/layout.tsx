@@ -30,7 +30,7 @@ export const viewport = {
 };
 
 export const metadata = {
-  metadataBase: new URL('https://www.adriaansen-consulting.com'),
+  metadataBase: new URL('https://www.adriaansenconsulting.com'),
   title: {
     default: "Adriaansen Consulting | Strategic Finance & Innovation",
     template: "%s | Adriaansen Consulting"
@@ -43,7 +43,7 @@ export const metadata = {
     "technology consulting", "business transformation", "AI consulting",
     "blockchain solutions", "strategic planning", "digital innovation"
   ],
-  authors: [{ name: "Adriaansen Consulting", url: "https://www.adriaansen-consulting.com" }],
+  authors: [{ name: "Adriaansen Consulting", url: "https://www.adriaansenconsulting.com" }],
   creator: "Adriaansen Consulting",
   publisher: "Adriaansen Consulting",
   robots: {
@@ -61,7 +61,7 @@ export const metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://www.adriaansen-consulting.com",
+    url: "https://www.adriaansenconsulting.com",
     siteName: "Adriaansen Consulting",
     title: "Adriaansen Consulting | Strategic Finance & Innovation",
     description: "Strategic Finance, Wealth Management & Digital Transformation experts specializing in AI and Blockchain solutions.",
@@ -94,7 +94,7 @@ export const metadata = {
     bing: 'add-your-bing-verification-here',
   },
   alternates: {
-    canonical: 'https://www.adriaansen-consulting.com',
+    canonical: 'https://www.adriaansenconsulting.com',
   },
   category: 'Business Consulting',
 };

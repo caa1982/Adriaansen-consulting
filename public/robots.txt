@@ -12,7 +12,7 @@ User-agent: Slurp
 Allow: /
 
 # Sitemap location
-Sitemap: https://www.adriaansen-consulting.com/sitemap.xml
+Sitemap: https://www.adriaansenconsulting.com/sitemap.xml
 
 # Crawl-delay for all bots
 Crawl-delay: 10
