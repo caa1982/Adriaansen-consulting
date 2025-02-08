@@ -90,9 +90,9 @@ const Overview: FC = () => {
               </p>
               <div className="border-l-2 sm:border-l-4 border-gold pl-4 sm:pl-6 transform transition-all duration-500 hover:translate-x-2">
                 <p className="text-base sm:text-lg md:text-xl italic text-carbon/90">
-                  "To empower clients with forward-thinking financial solutions by combining the rigor of wealth 
+                  &ldquo;To empower clients with forward-thinking financial solutions by combining the rigor of wealth 
                   management, trust structuring, and compliance with the transformative potential of fintech, 
-                  blockchain, and artificial intelligence."
+                  blockchain, and artificial intelligence.&rdquo;
                 </p>
               </div>
             </div>

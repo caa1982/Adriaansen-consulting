@@ -1,6 +1,6 @@
 "use client";
 
-import { FC } from "react";
+import { FC, JSX } from "react";
 import { useInView } from "react-intersection-observer";
 
 interface Service {
