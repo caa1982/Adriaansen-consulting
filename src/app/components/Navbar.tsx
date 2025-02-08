@@ -14,7 +14,6 @@ const Navbar: FC = () => {
       
       // Update active section based on scroll position
       const sections = ['hero', 'overview', 'team', 'services', 'engagement', 'contact'];
-      const scrollPosition = window.scrollY + window.innerHeight / 3;
 
       for (const section of sections) {
         const element = document.getElementById(section);
@@ -109,7 +108,7 @@ const Navbar: FC = () => {
             md:bg-transparent md:backdrop-blur-none z-50
           `}>
             <ul className="flex flex-col md:flex-row md:items-center h-full md:h-auto justify-center py-16 md:py-0 px-4 md:px-0 space-y-6 md:space-y-0 md:space-x-8">
-              {['overview', 'team', 'services', 'engagement', 'contact'].map((item, index) => (
+              {['overview', 'team', 'services', 'engagement', 'contact'].map((item) => (
                 <li key={item} className="relative group">
                   <Link
                     href={`#${item}`}

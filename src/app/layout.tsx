@@ -22,6 +22,13 @@ type RootLayoutProps = {
   children: ReactNode;
 };
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  viewportFit: 'cover',
+};
+
 export const metadata = {
   metadataBase: new URL('https://www.adriaansen-consulting.com'),
   title: {
@@ -89,12 +96,6 @@ export const metadata = {
   alternates: {
     canonical: 'https://www.adriaansen-consulting.com',
   },
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 1,
-    viewportFit: 'cover',
-  },
   category: 'Business Consulting',
 };
 
@@ -102,7 +103,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable} scroll-smooth`}>
       <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
         <JsonLd />
       </head>
       <body className="font-sans antialiased min-h-screen flex flex-col">

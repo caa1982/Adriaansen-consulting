@@ -171,7 +171,7 @@ const Contact: FC = () => {
 
                 {submitStatus === "success" && (
                   <p className="text-green-600 text-center text-sm sm:text-base animate-fadeIn">
-                    Thank you for your message! We'll get back to you soon.
+                    Thank you for your message! We&apos;ll get back to you soon.
                   </p>
                 )}
 

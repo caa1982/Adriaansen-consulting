@@ -9,8 +9,6 @@ const nextConfig = {
   },
   // Enable React strict mode for better development
   reactStrictMode: true,
-  // Optimize production builds
-  swcMinify: true,
   poweredByHeader: false,
   compress: true,
   // Configure content security policy

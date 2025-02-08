@@ -1,5 +1,5 @@
 "use client";
-import { FC, useEffect, useState } from "react";
+import { FC } from "react";
 import { useInView } from "react-intersection-observer";
 import { IconType } from "react-icons";
 import { FaBriefcase, FaLink, FaRobot, FaClipboardCheck } from "react-icons/fa";
