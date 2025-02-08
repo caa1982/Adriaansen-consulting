@@ -19,10 +19,6 @@ const playfair = Playfair_Display({
   variable: '--font-playfair',
 });
 
-type RootLayoutProps = {
-  children: ReactNode;
-};
-
 export const viewport: Viewport = {
   themeColor: '#D4AF37',
   width: 'device-width',
