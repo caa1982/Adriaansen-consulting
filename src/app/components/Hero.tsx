@@ -21,20 +21,22 @@ const Hero: FC = () => {
       className="relative min-h-[100svh] bg-carbon overflow-hidden"
       aria-label="Welcome to Adriaansen Consulting"
     >
-      {/* Enhanced layered background */}
-      <div className="absolute inset-0">
+     
+
+      {/* Enhanced layered backgrounds */}
+      <div className="absolute inset-0 z-10">
         <div className="absolute inset-0 bg-gradient-to-br from-carbon via-carbon/95 to-carbon/80" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(212,175,55,0.05)_0%,transparent_50%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(245,245,245,0.03)_0%,transparent_50%)]" />
       </div>
       
       {/* Refined background pattern with subtle movement */}
-      <div className="absolute inset-0 opacity-[0.05]" role="presentation">
+      <div className="absolute inset-0 opacity-[0.05] z-20" role="presentation">
         <div className="absolute inset-0 bg-[url('/pattern.svg')] bg-repeat animate-subtle-float scale-150" />
       </div>
 
       <div 
-        className={`relative z-10 flex flex-col items-center justify-center min-h-[100svh] px-4 sm:px-6 text-center 
+        className={`relative z-30 flex flex-col items-center justify-center min-h-[100svh] px-4 sm:px-6 text-center 
           ${isVisible ? 'animate-fadeIn' : 'opacity-0'}`}
       >
         {/* Enhanced logo presentation */}
@@ -69,7 +71,7 @@ const Hero: FC = () => {
           Strategic Finance, Wealth Management & Digital Transformation
         </p>
 
-        {/* Enhanced button design */}
+        {/* Refined button design */}
         <div className="relative group px-4 w-full sm:w-auto animation-delay-500 animate-pop">
           <div className="absolute -inset-0.5 bg-gradient-to-r from-gold/50 via-cream/30 to-gold/50 rounded-lg blur 
                         opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200
@@ -81,8 +83,8 @@ const Hero: FC = () => {
                      bg-gradient-to-r from-gold via-gold to-gold hover:to-cream
                      text-carbon font-bold text-lg sm:text-xl
                      focus:outline-none focus:ring-2 focus:ring-gold/50 
-                     shadow-lg hover:shadow-xl"
-            aria-label="View our services"
+                     shadow-lg hover:shadow-xl transform hover:rotate-1"
+            aria-label="Explore our services"
           >
             Explore Our Services
           </button>
@@ -90,12 +92,13 @@ const Hero: FC = () => {
 
         {/* Refined scroll indicator */}
         <div className="absolute bottom-8 sm:bottom-12 left-1/2 transform -translate-x-1/2 animation-delay-600">
+          <div className="absolute -top-2 -left-2 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gold/20 animate-ping" />
           <a 
             href="#overview" 
             aria-label="Scroll to overview section"
             className="group flex flex-col items-center gap-2 hover:text-gold 
                      transition-colors duration-300 focus:outline-none focus:ring-2 
-                     focus:ring-gold/50 rounded-full p-2"
+                     focus:ring-gold/50 rounded-full p-2 hover:scale-110"
           >
             <span className="text-sm font-medium text-cream/70 group-hover:text-gold/90 
                            transition-colors duration-300">Discover More</span>
@@ -106,6 +109,7 @@ const Hero: FC = () => {
               stroke="currentColor"
               strokeWidth="1.5"
               viewBox="0 0 24 24"
+              aria-hidden="true"
             >
               <path
                 strokeLinecap="round"
