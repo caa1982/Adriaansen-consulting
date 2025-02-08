@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+
+# Specific directives for major search engines
+User-agent: Googlebot
+Allow: /
+User-agent: Bingbot
+Allow: /
+User-agent: Slurp
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.adriaansen-consulting.com/sitemap.xml
+
+# Crawl-delay for all bots
+Crawl-delay: 10
+
+# Additional helpful directives
+Clean-param: utm_source&utm_medium&utm_campaign&utm_term&utm_content
+Clean-param: fbclid&gclid
